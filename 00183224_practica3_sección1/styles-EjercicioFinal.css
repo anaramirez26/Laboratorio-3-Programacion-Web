@@ -1,0 +1,152 @@
+:root {
+
+  --blue: #1e90ff;
+  --white: #ffffff;
+  --pink: #E12AFB;
+  --green: #2afb2d;
+}
+
+.box {
+  display: flex;
+  background-color: var(--pink);
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.box div {
+  flex-grow: 4;
+  margin: 10px 5px;
+  border-radius: 8px;
+  padding: 5px;
+  background-color: var(--blue);
+  width: 33%;
+}
+
+.box div:first-child {
+  width: 64%;
+}
+
+.item-a {
+  grid-area: header;
+  background-color: var(--blue)
+}
+
+.item-b {
+  grid-area: main;
+  background-color: var(--pink)
+}
+
+.item-c {
+  grid-area: sidebar;
+  background-color: var(--blue)
+}
+
+.item-d {
+  grid-area: footer;
+  background-color: var(--green)
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 100px 100px 100px 100px;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "header header header header"
+    "main main . sidebar"
+    "footer footer footer footer";
+}
+
+.my-element {
+  height: 100px;
+  background-color: var(--pink);
+  color: var(--white);
+}
+
+.my-element-animate {
+  width: 30%;
+  height: 50px;
+  background-color: var(--blue);
+  animation: slideIn 3s ease-in-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.shopping-cart {
+  max-width: 420px;
+  padding: 16px 18px;
+  border: 1px solid #e7e7e7;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, .06);
+  margin-top: 20px;
+}
+
+.shopping-cart h2 {
+  margin: 0 0 8px;
+}
+
+.shopping-cart ul {
+  margin: 0 0 12px 22px;
+
+}
+
+.shopping-cart img {
+  display: block;
+  margin: 8px 0 0 24px;
+  width: 80px;
+  height: auto;
+}
+
+.animation {
+  opacity: 0;
+  transform: translateY(12px);
+  animation: fadeInUp 0.5s ease-out 0.5s both;
+
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.btn-pay {
+  display: inline-block;
+  padding: 10px 18px;
+  background: var(--blue);
+  color: #fff;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+  transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, .12);
+}
+
+.btn-pay:hover {
+  background: #1476d6;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, .18);
+}
+
+.btn-pay:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, .12);
+}
+
+.btn-pay:focus-visible {
+  outline: 3px solid rgba(30, 144, 255, .35);
+  outline-offset: 3px;
+}
